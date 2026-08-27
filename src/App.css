@@ -1,0 +1,7 @@
+/* Temporary Phase 3 showcase layout. Replaced by the real landing in Phase 5. */
+.cta-row {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}

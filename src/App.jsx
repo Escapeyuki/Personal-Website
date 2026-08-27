@@ -1,10 +1,26 @@
-// Placeholder shell for Phase 1 (scaffold only).
-// Real routing, pages, and the three.js hero come in later phases (see project.md).
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout.jsx'
+import Landing from './pages/Landing.jsx'
+import Quant from './pages/Quant.jsx'
+import Frontend from './pages/Frontend.jsx'
+import Photography from './pages/Photography.jsx'
+import About from './pages/About.jsx'
+import NotFound from './pages/NotFound.jsx'
+import './App.css'
+
+// Route table. Every page shares Layout (nav + footer); the "*" route catches
+// anything unknown and shows the not-found page.
 export default function App() {
   return (
-    <main>
-      <h1>Escape Yuki</h1>
-      <p>Portfolio site — scaffold in place. Building from grill.md.</p>
-    </main>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Landing />} />
+        <Route path="quant" element={<Quant />} />
+        <Route path="frontend" element={<Frontend />} />
+        <Route path="photography" element={<Photography />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }

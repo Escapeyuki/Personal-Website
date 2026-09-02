@@ -1,0 +1,152 @@
+/*
+ * Typography utilities — one class per text role from DESIGN.md.
+ * Each reads the role's tokens (src/styles/tokens.css). Apply to any element
+ * (h1, h2, p, span); margins are reset so layout controls spacing.
+ */
+
+.t-hero,
+.t-display-lg,
+.t-display-md,
+.t-lead,
+.t-lead-airy,
+.t-tagline,
+.t-body-strong,
+.t-body,
+.t-dense-link,
+.t-caption,
+.t-caption-strong,
+.t-button-large,
+.t-button-utility,
+.t-fine-print,
+.t-micro-legal,
+.t-nav-link {
+  margin: 0;
+}
+
+.t-hero {
+  font-family: var(--text-hero-font);
+  font-size: var(--text-hero-size);
+  font-weight: var(--text-hero-weight);
+  line-height: var(--text-hero-line);
+  letter-spacing: var(--text-hero-tracking);
+}
+
+.t-display-lg {
+  font-family: var(--text-display-lg-font);
+  font-size: var(--text-display-lg-size);
+  font-weight: var(--text-display-lg-weight);
+  line-height: var(--text-display-lg-line);
+  letter-spacing: var(--text-display-lg-tracking);
+}
+
+.t-display-md {
+  font-family: var(--text-display-md-font);
+  font-size: var(--text-display-md-size);
+  font-weight: var(--text-display-md-weight);
+  line-height: var(--text-display-md-line);
+  letter-spacing: var(--text-display-md-tracking);
+}
+
+.t-lead {
+  font-family: var(--text-lead-font);
+  font-size: var(--text-lead-size);
+  font-weight: var(--text-lead-weight);
+  line-height: var(--text-lead-line);
+  letter-spacing: var(--text-lead-tracking);
+}
+
+.t-lead-airy {
+  font-family: var(--text-lead-airy-font);
+  font-size: var(--text-lead-airy-size);
+  font-weight: var(--text-lead-airy-weight);
+  line-height: var(--text-lead-airy-line);
+  letter-spacing: var(--text-lead-airy-tracking);
+}
+
+.t-tagline {
+  font-family: var(--text-tagline-font);
+  font-size: var(--text-tagline-size);
+  font-weight: var(--text-tagline-weight);
+  line-height: var(--text-tagline-line);
+  letter-spacing: var(--text-tagline-tracking);
+}
+
+.t-body-strong {
+  font-family: var(--text-body-strong-font);
+  font-size: var(--text-body-strong-size);
+  font-weight: var(--text-body-strong-weight);
+  line-height: var(--text-body-strong-line);
+  letter-spacing: var(--text-body-strong-tracking);
+}
+
+.t-body {
+  font-family: var(--text-body-font);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-line);
+  letter-spacing: var(--text-body-tracking);
+}
+
+.t-dense-link {
+  font-family: var(--text-dense-link-font);
+  font-size: var(--text-dense-link-size);
+  font-weight: var(--text-dense-link-weight);
+  line-height: var(--text-dense-link-line);
+  letter-spacing: var(--text-dense-link-tracking);
+}
+
+.t-caption {
+  font-family: var(--text-caption-font);
+  font-size: var(--text-caption-size);
+  font-weight: var(--text-caption-weight);
+  line-height: var(--text-caption-line);
+  letter-spacing: var(--text-caption-tracking);
+}
+
+.t-caption-strong {
+  font-family: var(--text-caption-strong-font);
+  font-size: var(--text-caption-strong-size);
+  font-weight: var(--text-caption-strong-weight);
+  line-height: var(--text-caption-strong-line);
+  letter-spacing: var(--text-caption-strong-tracking);
+}
+
+.t-button-large {
+  font-family: var(--text-button-large-font);
+  font-size: var(--text-button-large-size);
+  font-weight: var(--text-button-large-weight);
+  line-height: var(--text-button-large-line);
+  letter-spacing: var(--text-button-large-tracking);
+}
+
+.t-button-utility {
+  font-family: var(--text-button-utility-font);
+  font-size: var(--text-button-utility-size);
+  font-weight: var(--text-button-utility-weight);
+  line-height: var(--text-button-utility-line);
+  letter-spacing: var(--text-button-utility-tracking);
+}
+
+.t-fine-print {
+  font-family: var(--text-fine-print-font);
+  font-size: var(--text-fine-print-size);
+  font-weight: var(--text-fine-print-weight);
+  line-height: var(--text-fine-print-line);
+  letter-spacing: var(--text-fine-print-tracking);
+}
+
+.t-micro-legal {
+  font-family: var(--text-micro-legal-font);
+  font-size: var(--text-micro-legal-size);
+  font-weight: var(--text-micro-legal-weight);
+  line-height: var(--text-micro-legal-line);
+  letter-spacing: var(--text-micro-legal-tracking);
+}
+
+.t-nav-link {
+  font-family: var(--text-nav-link-font);
+  font-size: var(--text-nav-link-size);
+  font-weight: var(--text-nav-link-weight);
+  line-height: var(--text-nav-link-line);
+  letter-spacing: var(--text-nav-link-tracking);
+}

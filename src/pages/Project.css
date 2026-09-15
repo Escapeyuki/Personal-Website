@@ -1,0 +1,100 @@
+/* Project detail page. A single readable column on white; the write-up ("prose")
+ * uses the DESIGN.md type roles — display headings, 17px body, one blue accent.
+ * Code blocks are styled by the highlight.js theme; math by KaTeX (both global). */
+
+.project-article {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  padding: var(--space-section) var(--space-lg);
+}
+
+.project-article__inner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.project-article__back {
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.project-article__tags {
+  margin-bottom: var(--space-xs);
+  color: var(--color-ink-48);
+  text-transform: lowercase;
+}
+
+.project-article__title {
+  margin-bottom: var(--space-lg);
+}
+
+.project-article__repo {
+  margin: 0 0 var(--space-xl);
+}
+
+/* --- Prose: the rendered MDX body -------------------------------------- */
+
+.prose h2 {
+  margin: var(--space-xl) 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.prose h3 {
+  margin: var(--space-lg) 0 var(--space-xs);
+  font-family: var(--font-display);
+  font-size: var(--text-tagline-size);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+}
+
+.prose p,
+.prose li {
+  font-family: var(--font-text);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  letter-spacing: var(--text-body-tracking);
+}
+
+.prose p {
+  margin: 0 0 var(--space-md);
+}
+
+.prose a {
+  color: var(--color-primary);
+}
+
+/* Inline code (outside a highlighted block) reads as a small chip. */
+.prose :not(pre) > code {
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  background: var(--color-canvas-parchment);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 15px;
+}
+
+/* Code blocks: highlight.js paints the fill + padding on .hljs; we just round
+ * the frame and add a hairline. */
+.prose pre {
+  margin: 0 0 var(--space-md);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.prose pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 15px;
+}
+
+/* Display math scrolls sideways on narrow screens instead of overflowing. */
+.prose .katex-display {
+  margin: var(--space-lg) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

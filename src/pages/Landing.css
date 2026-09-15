@@ -1,0 +1,37 @@
+/* Landing gallery. The hero fills the first screen (below the 44px nav); each
+ * category tile below reads as its own full-height section. Content stays
+ * centered by the shared .tile__inner column. */
+
+.tile.landing-hero {
+  position: relative;
+  overflow: hidden; /* clip the 3D backdrop to the hero */
+  min-height: calc(100vh - 44px);
+  min-height: calc(100svh - 44px); /* account for mobile browser chrome */
+  display: grid;
+  place-items: center;
+}
+
+/* The 3D point-cloud backdrop fills the hero behind the text and never eats
+ * pointer events (mouse parallax is tracked at the window level). */
+.landing-hero__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Hero text sits above the backdrop. */
+.landing-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.tile.landing-tile {
+  min-height: 66vh;
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,8 @@
+/* About page — the contact button row sits centered under the intro. */
+
+.about__contact {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}

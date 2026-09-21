@@ -1,0 +1,33 @@
+---
+title: Pairs Trading
+category: quant
+summary: A mean-reversion strategy on cointegrated pairs.
+tags: [python, statistics, cointegration]
+repo: https://github.com/Escapeyuki/pairs-trading
+cover: /img/pairs-trading.svg
+date: 2026-03-20
+---
+
+## Overview
+
+Find two names whose prices move together over the long run, trade the spread
+when it stretches, and close when it snaps back.
+
+## The spread
+
+We hedge one leg against the other and watch the z-score of the residual spread:
+
+$$ z_t = \frac{s_t - \mu_s}{\sigma_s}, \quad s_t = P^A_t - \beta\,P^B_t $$
+
+Enter when $|z_t| > 2$, exit when it reverts toward $0$.
+
+## Signal
+
+```python
+spread = a - beta * b
+z = (spread - spread.rolling(60).mean()) / spread.rolling(60).std()
+position = -np.sign(z) * (z.abs() > 2)
+```
+
+The edge lives entirely in the pair selection — a spurious pair mean-reverts until
+it doesn't.

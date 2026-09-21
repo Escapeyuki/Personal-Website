@@ -1,0 +1,32 @@
+---
+title: Trading Dashboard
+category: frontend
+summary: A real-time React dashboard for live P&L and order flow.
+tags: [react, vite, websockets]
+repo: https://github.com/Escapeyuki/trading-dashboard
+cover: /img/trading-dashboard.svg
+date: 2026-05-01
+---
+
+## Overview
+
+A real-time trading dashboard built in React + Vite. A WebSocket feed streams
+fills and quotes; the UI shows live P&L, open positions, and a running order
+blotter, all updating without a page refresh.
+
+## Data flow
+
+A single WebSocket connection fans out to a small store; components subscribe to
+just the slice they render, so a burst of quotes never re-renders the whole tree:
+
+```js
+socket.onmessage = (event) => {
+  const tick = JSON.parse(event.data)
+  store.apply(tick) // only subscribers to tick.symbol re-render
+}
+```
+
+## Notes
+
+The hard part was not the sockets — it was keeping the frame rate steady when the
+feed spikes. Batching updates into one animation frame did most of the work.

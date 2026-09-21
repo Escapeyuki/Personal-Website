@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Portraits placeholder cover">
+  <rect width="1200" height="800" fill="#e8e8ea"/>
+  <text x="600" y="405" font-family="'SF Pro Display', system-ui, sans-serif" font-size="46" font-weight="600" fill="#8e8e93" text-anchor="middle">Portraits</text>
+  <text x="600" y="455" font-family="'SF Pro Text', system-ui, sans-serif" font-size="20" fill="#aeaeb2" text-anchor="middle">placeholder cover</text>
+</svg>

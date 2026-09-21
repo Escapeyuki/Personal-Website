@@ -1,0 +1,58 @@
+/* Full-bleed tiles. Rectangular, edge-to-edge (never rounded). 80px vertical
+ * padding. See DESIGN.md → Cards & Containers. */
+
+.tile {
+  width: 100%;
+  padding: var(--space-section) var(--space-lg);
+  border-radius: var(--radius-none);
+}
+
+/* Centered content column with the DESIGN.md text-section max width. */
+.tile__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+}
+
+/* Surfaces */
+.tile--light {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.tile--parchment {
+  background: var(--color-canvas-parchment);
+  color: var(--color-ink);
+}
+
+.tile--dark {
+  background: var(--color-tile-1);
+  color: var(--color-on-dark);
+}
+
+.tile--dark-2 {
+  background: var(--color-tile-2);
+  color: var(--color-on-dark);
+}
+
+.tile--dark-3 {
+  background: var(--color-tile-3);
+  color: var(--color-on-dark);
+}
+
+/* Inline text links pick the right blue for their surface.
+ * Buttons (.btn) carry their own color, so exclude them. */
+.tile--light a:not(.btn),
+.tile--parchment a:not(.btn) {
+  color: var(--color-primary);
+}
+
+.tile--dark a:not(.btn),
+.tile--dark-2 a:not(.btn),
+.tile--dark-3 a:not(.btn) {
+  color: var(--color-primary-on-dark);
+}

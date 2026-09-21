@@ -1,0 +1,30 @@
+/* A project tile: cover image (with the one product-shadow) above centered
+ * meta and action buttons. Surface + text color come from the Tile variant. */
+
+.project-tile__cover {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-product); /* the only shadow in the system */
+}
+
+.project-tile__tags {
+  color: var(--color-ink-48);
+  text-transform: lowercase;
+}
+
+/* Muted tag color flips on dark surfaces. */
+.tile--dark .project-tile__tags,
+.tile--dark-2 .project-tile__tags,
+.tile--dark-3 .project-tile__tags {
+  color: var(--color-body-muted);
+}
+
+.project-tile__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,31 @@
+---
+title: Virtualized Data Grid
+category: frontend
+summary: A windowed table that stays smooth at a hundred thousand rows.
+tags: [react, virtualization, performance]
+repo: https://github.com/Escapeyuki/data-grid
+cover: /img/data-grid.svg
+date: 2026-02-10
+---
+
+## Overview
+
+A React data grid that renders only the rows currently on screen, so scrolling
+through very large tables stays smooth.
+
+## Windowing
+
+Given the scroll position and row height, we render a small slice plus a small
+overscan buffer, and offset it with a spacer:
+
+```js
+const first = Math.floor(scrollTop / rowHeight)
+const count = Math.ceil(viewportHeight / rowHeight) + overscan
+const rows = data.slice(first, first + count)
+```
+
+## Notes
+
+The interesting edge cases were variable row heights and keyboard navigation
+landing on a row that isn't mounted yet. Both came down to measuring first, then
+scrolling the target into the window before focusing it.

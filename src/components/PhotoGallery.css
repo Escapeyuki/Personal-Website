@@ -1,0 +1,38 @@
+/* Photography gallery grid. Full-width light surface with a responsive grid;
+ * captions in muted caption type. No shadows on the frames — the photos speak. */
+
+.photo-gallery {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  padding: var(--space-section) var(--space-lg);
+}
+
+.photo-gallery__grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.photo-gallery__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.photo-gallery__img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.photo-gallery__caption {
+  display: block;
+  margin-top: var(--space-xs);
+  color: var(--color-ink-48);
+}

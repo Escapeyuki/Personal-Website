@@ -1,0 +1,35 @@
+---
+title: Options Vol Surface
+category: quant
+summary: Fitting and visualizing an implied-volatility surface from option quotes.
+tags: [python, options, volatility]
+repo: https://github.com/Escapeyuki/vol-surface
+cover: /img/vol-surface.svg
+date: 2026-07-15
+---
+
+## Overview
+
+Given a chain of option quotes, this project backs out the implied volatility for
+each strike and expiry, then fits a smooth surface across the two.
+
+## Implied vol
+
+For each quote we invert the Black–Scholes price numerically to find the vol
+$\sigma$ that reprices it, where the call price is
+
+$$ C = S\,\Phi(d_1) - K e^{-rT}\,\Phi(d_2), \quad d_1 = \frac{\ln(S/K) + (r + \tfrac{1}{2}\sigma^2)T}{\sigma\sqrt{T}} $$
+
+## Solver
+
+A Brent root-find on price error is stable and fast enough for a full chain:
+
+```python
+from scipy.optimize import brentq
+
+def implied_vol(price, S, K, r, T, call=True):
+    f = lambda sig: bs_price(S, K, r, T, sig, call) - price
+    return brentq(f, 1e-4, 5.0)
+```
+
+The fitted surface shows the usual skew: out-of-the-money puts trade at a premium.
